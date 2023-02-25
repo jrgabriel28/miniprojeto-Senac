@@ -36,6 +36,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.cadastroDeProdutosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +56,8 @@
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroDeUsuarioToolStripMenuItem,
-            this.cadastroDeProdutosToolStripMenuItem});
+            this.cadastroDeProdutosToolStripMenuItem,
+            this.cadastroDeProdutosToolStripMenuItem1});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -63,15 +65,15 @@
             // cadastroDeUsuarioToolStripMenuItem
             // 
             this.cadastroDeUsuarioToolStripMenuItem.Name = "cadastroDeUsuarioToolStripMenuItem";
-            this.cadastroDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.cadastroDeUsuarioToolStripMenuItem.Text = "Cadastro de  usuario";
+            this.cadastroDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.cadastroDeUsuarioToolStripMenuItem.Text = "Cadastro de Usuarios";
             this.cadastroDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeUsuarioToolStripMenuItem_Click);
             // 
             // cadastroDeProdutosToolStripMenuItem
             // 
             this.cadastroDeProdutosToolStripMenuItem.Name = "cadastroDeProdutosToolStripMenuItem";
-            this.cadastroDeProdutosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.cadastroDeProdutosToolStripMenuItem.Text = "Cadastro de produtos";
+            this.cadastroDeProdutosToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.cadastroDeProdutosToolStripMenuItem.Text = "Cadastro de Categoria";
             this.cadastroDeProdutosToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeProdutosToolStripMenuItem_Click);
             // 
             // statusStrip
@@ -90,6 +92,13 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
+            // 
+            // cadastroDeProdutosToolStripMenuItem1
+            // 
+            this.cadastroDeProdutosToolStripMenuItem1.Name = "cadastroDeProdutosToolStripMenuItem1";
+            this.cadastroDeProdutosToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
+            this.cadastroDeProdutosToolStripMenuItem1.Text = "Cadastro de Produtos";
+            this.cadastroDeProdutosToolStripMenuItem1.Click += new System.EventHandler(this.cadastroDeProdutosToolStripMenuItem1_Click);
             // 
             // mdicentral
             // 
@@ -122,6 +131,7 @@
         private ToolStripMenuItem menuToolStripMenuItem;
         private ToolStripMenuItem cadastroDeUsuarioToolStripMenuItem;
         private ToolStripMenuItem cadastroDeProdutosToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeProdutosToolStripMenuItem1;
     }
 }
 

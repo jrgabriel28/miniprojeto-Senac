@@ -39,5 +39,12 @@ namespace N8_miniprojeto
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void cadastroDeProdutosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmproduto frmp = new frmproduto();
+            frmp.MdiParent = this;
+            frmp.Show();
+        }
     }
 }
