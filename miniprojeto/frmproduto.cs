@@ -21,5 +21,10 @@ namespace N8_miniprojeto
         {
 
         }
+
+        private void frmproduto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

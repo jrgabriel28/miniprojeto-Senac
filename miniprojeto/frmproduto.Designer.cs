@@ -344,6 +344,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmproduto";
             this.Text = "Cadastro de produto";
+            this.Load += new System.EventHandler(this.frmproduto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
