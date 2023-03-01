@@ -50,7 +50,7 @@ namespace N8_miniprojeto
 
         private void bto_sair_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void bto_limpar_Click(object sender, EventArgs e)

@@ -76,6 +76,7 @@
             this.bto_codigo.TabIndex = 2;
             this.bto_codigo.Text = "...";
             this.bto_codigo.UseVisualStyleBackColor = true;
+            this.bto_codigo.Click += new System.EventHandler(this.bto_codigo_Click);
             // 
             // txt_codigo
             // 
@@ -252,6 +253,7 @@
             this.bto_alterar.TabIndex = 0;
             this.bto_alterar.Text = "Alterar";
             this.bto_alterar.UseVisualStyleBackColor = true;
+            this.bto_alterar.Click += new System.EventHandler(this.bto_alterar_Click);
             // 
             // bto_limpar
             // 
@@ -271,6 +273,7 @@
             this.bto_excluir.TabIndex = 0;
             this.bto_excluir.Text = "Excluir";
             this.bto_excluir.UseVisualStyleBackColor = true;
+            this.bto_excluir.Click += new System.EventHandler(this.bto_excluir_Click);
             // 
             // bto_sair
             // 

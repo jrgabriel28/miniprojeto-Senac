@@ -46,5 +46,10 @@ namespace N8_miniprojeto
             frmp.MdiParent = this;
             frmp.Show();
         }
+
+        private void sToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

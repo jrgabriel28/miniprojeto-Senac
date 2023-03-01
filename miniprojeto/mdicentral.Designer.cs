@@ -33,10 +33,11 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeProdutosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDeProdutosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.cadastroDeProdutosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +45,8 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem});
+            this.menuToolStripMenuItem,
+            this.sToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -65,16 +67,23 @@
             // cadastroDeUsuarioToolStripMenuItem
             // 
             this.cadastroDeUsuarioToolStripMenuItem.Name = "cadastroDeUsuarioToolStripMenuItem";
-            this.cadastroDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.cadastroDeUsuarioToolStripMenuItem.Text = "Cadastro de Usuarios";
+            this.cadastroDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.cadastroDeUsuarioToolStripMenuItem.Text = "Usuarios";
             this.cadastroDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeUsuarioToolStripMenuItem_Click);
             // 
             // cadastroDeProdutosToolStripMenuItem
             // 
             this.cadastroDeProdutosToolStripMenuItem.Name = "cadastroDeProdutosToolStripMenuItem";
-            this.cadastroDeProdutosToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.cadastroDeProdutosToolStripMenuItem.Text = "Cadastro de Categoria";
+            this.cadastroDeProdutosToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.cadastroDeProdutosToolStripMenuItem.Text = "Categoria";
             this.cadastroDeProdutosToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeProdutosToolStripMenuItem_Click);
+            // 
+            // cadastroDeProdutosToolStripMenuItem1
+            // 
+            this.cadastroDeProdutosToolStripMenuItem1.Name = "cadastroDeProdutosToolStripMenuItem1";
+            this.cadastroDeProdutosToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.cadastroDeProdutosToolStripMenuItem1.Text = "Produtos";
+            this.cadastroDeProdutosToolStripMenuItem1.Click += new System.EventHandler(this.cadastroDeProdutosToolStripMenuItem1_Click);
             // 
             // statusStrip
             // 
@@ -93,12 +102,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // cadastroDeProdutosToolStripMenuItem1
+            // sToolStripMenuItem
             // 
-            this.cadastroDeProdutosToolStripMenuItem1.Name = "cadastroDeProdutosToolStripMenuItem1";
-            this.cadastroDeProdutosToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
-            this.cadastroDeProdutosToolStripMenuItem1.Text = "Cadastro de Produtos";
-            this.cadastroDeProdutosToolStripMenuItem1.Click += new System.EventHandler(this.cadastroDeProdutosToolStripMenuItem1_Click);
+            this.sToolStripMenuItem.Name = "sToolStripMenuItem";
+            this.sToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sToolStripMenuItem.Text = "Sair";
+            this.sToolStripMenuItem.Click += new System.EventHandler(this.sToolStripMenuItem_Click);
             // 
             // mdicentral
             // 
@@ -132,6 +141,7 @@
         private ToolStripMenuItem cadastroDeUsuarioToolStripMenuItem;
         private ToolStripMenuItem cadastroDeProdutosToolStripMenuItem;
         private ToolStripMenuItem cadastroDeProdutosToolStripMenuItem1;
+        private ToolStripMenuItem sToolStripMenuItem;
     }
 }
 

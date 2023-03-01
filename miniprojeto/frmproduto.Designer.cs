@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bto_codigo = new System.Windows.Forms.Button();
-            this.txt_codigo = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lbl_cadastro = new System.Windows.Forms.Label();
+            this.bto_codigoproduto = new System.Windows.Forms.Button();
+            this.txt_codigoproduto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbo_status = new System.Windows.Forms.ComboBox();
@@ -39,7 +41,7 @@
             this.txt_valorvenda = new System.Windows.Forms.TextBox();
             this.txt_unidade = new System.Windows.Forms.TextBox();
             this.txt_peso = new System.Windows.Forms.TextBox();
-            this.txt_qtd = new System.Windows.Forms.TextBox();
+            this.txt_qtde = new System.Windows.Forms.TextBox();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.txt_codigocategoria = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,8 +66,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.bto_codigo);
-            this.groupBox1.Controls.Add(this.txt_codigo);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.lbl_cadastro);
+            this.groupBox1.Controls.Add(this.bto_codigoproduto);
+            this.groupBox1.Controls.Add(this.txt_codigoproduto);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -73,21 +77,40 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // bto_codigo
+            // label12
             // 
-            this.bto_codigo.Location = new System.Drawing.Point(137, 38);
-            this.bto_codigo.Name = "bto_codigo";
-            this.bto_codigo.Size = new System.Drawing.Size(35, 23);
-            this.bto_codigo.TabIndex = 2;
-            this.bto_codigo.Text = "...";
-            this.bto_codigo.UseVisualStyleBackColor = true;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(295, 19);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(97, 15);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Data de Cadastro";
             // 
-            // txt_codigo
+            // lbl_cadastro
             // 
-            this.txt_codigo.Location = new System.Drawing.Point(8, 38);
-            this.txt_codigo.Name = "txt_codigo";
-            this.txt_codigo.Size = new System.Drawing.Size(123, 23);
-            this.txt_codigo.TabIndex = 1;
+            this.lbl_cadastro.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbl_cadastro.Location = new System.Drawing.Point(297, 38);
+            this.lbl_cadastro.Name = "lbl_cadastro";
+            this.lbl_cadastro.Size = new System.Drawing.Size(147, 23);
+            this.lbl_cadastro.TabIndex = 3;
+            // 
+            // bto_codigoproduto
+            // 
+            this.bto_codigoproduto.Location = new System.Drawing.Point(137, 38);
+            this.bto_codigoproduto.Name = "bto_codigoproduto";
+            this.bto_codigoproduto.Size = new System.Drawing.Size(35, 23);
+            this.bto_codigoproduto.TabIndex = 2;
+            this.bto_codigoproduto.Text = "...";
+            this.bto_codigoproduto.UseVisualStyleBackColor = true;
+            this.bto_codigoproduto.Click += new System.EventHandler(this.bto_codigoproduto_Click);
+            // 
+            // txt_codigoproduto
+            // 
+            this.txt_codigoproduto.Location = new System.Drawing.Point(8, 38);
+            this.txt_codigoproduto.Name = "txt_codigoproduto";
+            this.txt_codigoproduto.Size = new System.Drawing.Size(123, 23);
+            this.txt_codigoproduto.TabIndex = 1;
+            this.txt_codigoproduto.TextChanged += new System.EventHandler(this.txt_codigo_TextChanged);
             // 
             // label1
             // 
@@ -106,7 +129,7 @@
             this.groupBox2.Controls.Add(this.txt_valorvenda);
             this.groupBox2.Controls.Add(this.txt_unidade);
             this.groupBox2.Controls.Add(this.txt_peso);
-            this.groupBox2.Controls.Add(this.txt_qtd);
+            this.groupBox2.Controls.Add(this.txt_qtde);
             this.groupBox2.Controls.Add(this.txt_nome);
             this.groupBox2.Controls.Add(this.txt_codigocategoria);
             this.groupBox2.Controls.Add(this.label3);
@@ -126,14 +149,13 @@
             // 
             // cbo_status
             // 
-            this.cbo_status.AutoCompleteCustomSource.AddRange(new string[] {
+            this.cbo_status.FormattingEnabled = true;
+            this.cbo_status.Items.AddRange(new object[] {
             "Ativo",
             "Inativo"});
-            this.cbo_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_status.FormattingEnabled = true;
-            this.cbo_status.Location = new System.Drawing.Point(221, 91);
+            this.cbo_status.Location = new System.Drawing.Point(220, 91);
             this.cbo_status.Name = "cbo_status";
-            this.cbo_status.Size = new System.Drawing.Size(94, 23);
+            this.cbo_status.Size = new System.Drawing.Size(95, 23);
             this.cbo_status.TabIndex = 4;
             // 
             // txt_obs
@@ -174,12 +196,12 @@
             this.txt_peso.Size = new System.Drawing.Size(60, 23);
             this.txt_peso.TabIndex = 2;
             // 
-            // txt_qtd
+            // txt_qtde
             // 
-            this.txt_qtd.Location = new System.Drawing.Point(252, 37);
-            this.txt_qtd.Name = "txt_qtd";
-            this.txt_qtd.Size = new System.Drawing.Size(60, 23);
-            this.txt_qtd.TabIndex = 2;
+            this.txt_qtde.Location = new System.Drawing.Point(252, 37);
+            this.txt_qtde.Name = "txt_qtde";
+            this.txt_qtde.Size = new System.Drawing.Size(60, 23);
+            this.txt_qtde.TabIndex = 2;
             // 
             // txt_nome
             // 
@@ -192,7 +214,7 @@
             // 
             this.txt_codigocategoria.Location = new System.Drawing.Point(321, 91);
             this.txt_codigocategoria.Name = "txt_codigocategoria";
-            this.txt_codigocategoria.Size = new System.Drawing.Size(123, 23);
+            this.txt_codigocategoria.Size = new System.Drawing.Size(114, 23);
             this.txt_codigocategoria.TabIndex = 1;
             // 
             // label3
@@ -297,6 +319,7 @@
             this.bto_cadastrar.TabIndex = 0;
             this.bto_cadastrar.Text = "Cadastrar";
             this.bto_cadastrar.UseVisualStyleBackColor = true;
+            this.bto_cadastrar.Click += new System.EventHandler(this.bto_cadastrar_Click);
             // 
             // bto_alterar
             // 
@@ -306,6 +329,7 @@
             this.bto_alterar.TabIndex = 0;
             this.bto_alterar.Text = "Alterar";
             this.bto_alterar.UseVisualStyleBackColor = true;
+            this.bto_alterar.Click += new System.EventHandler(this.bto_alterar_Click);
             // 
             // bto_limpar
             // 
@@ -315,6 +339,7 @@
             this.bto_limpar.TabIndex = 0;
             this.bto_limpar.Text = "Limpar";
             this.bto_limpar.UseVisualStyleBackColor = true;
+            this.bto_limpar.Click += new System.EventHandler(this.bto_limpar_Click);
             // 
             // bto_excluir
             // 
@@ -324,6 +349,7 @@
             this.bto_excluir.TabIndex = 0;
             this.bto_excluir.Text = "Excluir";
             this.bto_excluir.UseVisualStyleBackColor = true;
+            this.bto_excluir.Click += new System.EventHandler(this.bto_excluir_Click);
             // 
             // bto_sair
             // 
@@ -333,6 +359,7 @@
             this.bto_sair.TabIndex = 0;
             this.bto_sair.Text = "Sair";
             this.bto_sair.UseVisualStyleBackColor = true;
+            this.bto_sair.Click += new System.EventHandler(this.bto_sair_Click);
             // 
             // frmproduto
             // 
@@ -357,16 +384,15 @@
         #endregion
 
         private GroupBox groupBox1;
-        private Button bto_codigo;
-        private TextBox txt_codigo;
+        private Button bto_codigoproduto;
+        private TextBox txt_codigoproduto;
         private Label label1;
         private GroupBox groupBox2;
-        private ComboBox cbo_status;
         private TextBox txt_valorcusto;
         private TextBox txt_valorvenda;
         private TextBox txt_unidade;
         private TextBox txt_peso;
-        private TextBox txt_qtd;
+        private TextBox txt_qtde;
         private TextBox txt_nome;
         private TextBox txt_codigocategoria;
         private Label label3;
@@ -385,5 +411,8 @@
         private Button bto_limpar;
         private Button bto_excluir;
         private Button bto_sair;
+        private ComboBox cbo_status;
+        private Label label12;
+        private Label lbl_cadastro;
     }
 }
