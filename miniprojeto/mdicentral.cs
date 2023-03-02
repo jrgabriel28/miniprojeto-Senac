@@ -24,7 +24,6 @@ namespace N8_miniprojeto
         {
 
         }
-
         private void cadastroDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmcategoria frmc = new frmcategoria();

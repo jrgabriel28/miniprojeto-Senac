@@ -50,6 +50,45 @@ namespace N8_miniprojeto
         private void frmproduto_Load(object sender, EventArgs e)
         {
             TestarConexao();
+            CarregarComboBox();
+        }
+
+        private void CarregarComboBox()
+        {
+            string sql = "select id_categoria, nome_categoria from categoria";
+
+            SqlConnection conn = new SqlConnection(stringConexao);
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader leitura;
+            DataTable dt = new DataTable();
+            conn.Open();
+
+
+            try
+            {
+                leitura = cmd.ExecuteReader();
+                dt.Load(leitura);
+
+                cbo_nomecategoria.DisplayMember = "nome_categoria";
+                cbo_nomecategoria.DataSource = dt;
+
+                cbo_codigocategoria.DisplayMember = "id_categoria";
+                cbo_codigocategoria.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+            
+
         }
 
         private void bto_cadastrar_Click(object sender, EventArgs e)
@@ -66,11 +105,11 @@ namespace N8_miniprojeto
                          "obs_produto," +
                          "status_produto" +
                          ") values (" +
-                         "'" + txt_codigocategoria.Text + "'," +
+                         "'" + cbo_codigocategoria.Text + "'," +
                          "'" + txt_nome.Text + "'," +
                          "'" + txt_qtde.Text + "'," +
                          "'" + txt_peso.Text + "'," +
-                         "'" + txt_unidade.Text + "'," +
+                         "'" + cbo_unidade.Text + "'," +
                          "'" + txt_valorcusto.Text + "'," +
                          "'" + txt_valorvenda.Text + "'," +
                          "'" + txt_obs.Text + "'," +
@@ -109,11 +148,10 @@ namespace N8_miniprojeto
 
             //Campo Unidade
 
-            if (txt_unidade.Text.Trim() == "")
+            if (cbo_unidade.Text == "")
             {
                 MessageBox.Show("Erro! Preenche o campo UNIDADE.");
-                txt_unidade.Text = "";
-                txt_unidade.Focus();
+                cbo_unidade.SelectedIndex = -1;
                 return;
             }
 
@@ -178,13 +216,14 @@ namespace N8_miniprojeto
 
         private void bto_limpar_Click(object sender, EventArgs e)
         {
-            txt_codigocategoria.Text = "";
+            cbo_codigocategoria.SelectedIndex = -1;
+            cbo_nomecategoria.SelectedIndex = -1;
             txt_codigoproduto.Text = "";
             lbl_cadastro.Text = "";
             txt_nome.Text = "";
             txt_qtde.Text = "";
             txt_peso.Text = "";
-            txt_unidade.Text = "";
+            cbo_unidade.Text = "";
             txt_valorcusto.Text = "";
             txt_valorvenda.Text = "";
             txt_obs.Text = "";
@@ -204,12 +243,14 @@ namespace N8_miniprojeto
         private void bto_alterar_Click(object sender, EventArgs e)
         {
             string sql = "update produto set " +
+                "id_categoria_produto = " + cbo_codigocategoria.Text + "," +
                 "nome_produto = '" + txt_nome.Text + "'," +
-                "qtde_produto = '" + txt_qtde.Text + "'," +
-                "peso_produto = '" + txt_peso.Text + "'," +
-                "unidade_produto = '" + txt_unidade.Text + "'," +
-                "valorcusto_produto = '" + txt_valorcusto.Text + "'," +
-                "valorvenda_produto = '" + txt_valorvenda.Text + "'," +
+                "qtde_produto = " + txt_qtde.Text.Replace(",",".") + "," +
+                "peso_produto = " + txt_peso.Text.Replace(",", ".") + "," +
+                "unidade_produto = '" + cbo_unidade.Text + "'," +
+                "valorcusto_produto = " + txt_valorcusto.Text.Replace(",", ".") + "," +
+                "valorvenda_produto = " + txt_valorvenda.Text.Replace(",", ".") + "," +
+                "obs_produto = '" + txt_obs.Text + "'," +
                 "status_produto = '" + cbo_status.Text + "' " +
                 "where id_produto = " + txt_codigoproduto.Text;
 
@@ -257,11 +298,11 @@ namespace N8_miniprojeto
                 if (leitura.Read())
                 {
                     txt_codigoproduto.Text = leitura[0].ToString();
-                    txt_codigocategoria.Text = leitura[1].ToString();
+                    cbo_codigocategoria.Text = leitura[1].ToString();
                     txt_nome.Text = leitura[2].ToString();
                     txt_qtde.Text = leitura[3].ToString();
                     txt_peso.Text = leitura[4].ToString();
-                    txt_unidade.Text = leitura[5].ToString();
+                    cbo_unidade.Text = leitura[5].ToString();
                     lbl_cadastro.Text = leitura[6].ToString();
                     txt_valorcusto.Text = leitura[7].ToString();
                     txt_valorvenda.Text = leitura[8].ToString();

@@ -35,15 +35,17 @@
             this.txt_codigoproduto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbo_unidade = new System.Windows.Forms.ComboBox();
+            this.cbo_codigocategoria = new System.Windows.Forms.ComboBox();
+            this.cbo_nomecategoria = new System.Windows.Forms.ComboBox();
             this.cbo_status = new System.Windows.Forms.ComboBox();
             this.txt_obs = new System.Windows.Forms.TextBox();
             this.txt_valorcusto = new System.Windows.Forms.TextBox();
             this.txt_valorvenda = new System.Windows.Forms.TextBox();
-            this.txt_unidade = new System.Windows.Forms.TextBox();
             this.txt_peso = new System.Windows.Forms.TextBox();
             this.txt_qtde = new System.Windows.Forms.TextBox();
             this.txt_nome = new System.Windows.Forms.TextBox();
-            this.txt_codigocategoria = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -73,14 +75,14 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(474, 69);
+            this.groupBox1.Size = new System.Drawing.Size(573, 69);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(295, 19);
+            this.label12.Location = new System.Drawing.Point(415, 19);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(97, 15);
             this.label12.TabIndex = 4;
@@ -89,7 +91,7 @@
             // lbl_cadastro
             // 
             this.lbl_cadastro.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.lbl_cadastro.Location = new System.Drawing.Point(297, 38);
+            this.lbl_cadastro.Location = new System.Drawing.Point(417, 38);
             this.lbl_cadastro.Name = "lbl_cadastro";
             this.lbl_cadastro.Size = new System.Drawing.Size(147, 23);
             this.lbl_cadastro.TabIndex = 3;
@@ -123,15 +125,17 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbo_unidade);
+            this.groupBox2.Controls.Add(this.cbo_codigocategoria);
+            this.groupBox2.Controls.Add(this.cbo_nomecategoria);
             this.groupBox2.Controls.Add(this.cbo_status);
             this.groupBox2.Controls.Add(this.txt_obs);
             this.groupBox2.Controls.Add(this.txt_valorcusto);
             this.groupBox2.Controls.Add(this.txt_valorvenda);
-            this.groupBox2.Controls.Add(this.txt_unidade);
             this.groupBox2.Controls.Add(this.txt_peso);
             this.groupBox2.Controls.Add(this.txt_qtde);
             this.groupBox2.Controls.Add(this.txt_nome);
-            this.groupBox2.Controls.Add(this.txt_codigocategoria);
+            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
@@ -143,9 +147,36 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(12, 87);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(474, 248);
+            this.groupBox2.Size = new System.Drawing.Size(573, 248);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // cbo_unidade
+            // 
+            this.cbo_unidade.FormattingEnabled = true;
+            this.cbo_unidade.Items.AddRange(new object[] {
+            "kg",
+            "g"});
+            this.cbo_unidade.Location = new System.Drawing.Point(504, 37);
+            this.cbo_unidade.Name = "cbo_unidade";
+            this.cbo_unidade.Size = new System.Drawing.Size(60, 23);
+            this.cbo_unidade.TabIndex = 6;
+            // 
+            // cbo_codigocategoria
+            // 
+            this.cbo_codigocategoria.FormattingEnabled = true;
+            this.cbo_codigocategoria.Location = new System.Drawing.Point(443, 91);
+            this.cbo_codigocategoria.Name = "cbo_codigocategoria";
+            this.cbo_codigocategoria.Size = new System.Drawing.Size(121, 23);
+            this.cbo_codigocategoria.TabIndex = 5;
+            // 
+            // cbo_nomecategoria
+            // 
+            this.cbo_nomecategoria.FormattingEnabled = true;
+            this.cbo_nomecategoria.Location = new System.Drawing.Point(318, 91);
+            this.cbo_nomecategoria.Name = "cbo_nomecategoria";
+            this.cbo_nomecategoria.Size = new System.Drawing.Size(121, 23);
+            this.cbo_nomecategoria.TabIndex = 5;
             // 
             // cbo_status
             // 
@@ -163,7 +194,7 @@
             this.txt_obs.Location = new System.Drawing.Point(8, 146);
             this.txt_obs.Multiline = true;
             this.txt_obs.Name = "txt_obs";
-            this.txt_obs.Size = new System.Drawing.Size(436, 88);
+            this.txt_obs.Size = new System.Drawing.Size(556, 88);
             this.txt_obs.TabIndex = 3;
             this.txt_obs.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
@@ -182,23 +213,16 @@
             this.txt_valorvenda.Size = new System.Drawing.Size(100, 23);
             this.txt_valorvenda.TabIndex = 3;
             // 
-            // txt_unidade
-            // 
-            this.txt_unidade.Location = new System.Drawing.Point(384, 37);
-            this.txt_unidade.Name = "txt_unidade";
-            this.txt_unidade.Size = new System.Drawing.Size(60, 23);
-            this.txt_unidade.TabIndex = 2;
-            // 
             // txt_peso
             // 
-            this.txt_peso.Location = new System.Drawing.Point(318, 37);
+            this.txt_peso.Location = new System.Drawing.Point(440, 37);
             this.txt_peso.Name = "txt_peso";
             this.txt_peso.Size = new System.Drawing.Size(60, 23);
             this.txt_peso.TabIndex = 2;
             // 
             // txt_qtde
             // 
-            this.txt_qtde.Location = new System.Drawing.Point(252, 37);
+            this.txt_qtde.Location = new System.Drawing.Point(374, 37);
             this.txt_qtde.Name = "txt_qtde";
             this.txt_qtde.Size = new System.Drawing.Size(60, 23);
             this.txt_qtde.TabIndex = 2;
@@ -207,20 +231,22 @@
             // 
             this.txt_nome.Location = new System.Drawing.Point(8, 37);
             this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(238, 23);
+            this.txt_nome.Size = new System.Drawing.Size(360, 23);
             this.txt_nome.TabIndex = 1;
             // 
-            // txt_codigocategoria
+            // label11
             // 
-            this.txt_codigocategoria.Location = new System.Drawing.Point(321, 91);
-            this.txt_codigocategoria.Name = "txt_codigocategoria";
-            this.txt_codigocategoria.Size = new System.Drawing.Size(114, 23);
-            this.txt_codigocategoria.TabIndex = 1;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(318, 73);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(94, 15);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Nome Categoria";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(321, 73);
+            this.label3.Location = new System.Drawing.Point(443, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 15);
             this.label3.TabIndex = 0;
@@ -229,7 +255,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(384, 19);
+            this.label6.Location = new System.Drawing.Point(504, 19);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 15);
             this.label6.TabIndex = 0;
@@ -238,7 +264,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(318, 19);
+            this.label5.Location = new System.Drawing.Point(440, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 15);
             this.label5.TabIndex = 0;
@@ -247,7 +273,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(252, 19);
+            this.label4.Location = new System.Drawing.Point(374, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 15);
             this.label4.TabIndex = 0;
@@ -305,9 +331,9 @@
             this.groupBox3.Controls.Add(this.bto_limpar);
             this.groupBox3.Controls.Add(this.bto_excluir);
             this.groupBox3.Controls.Add(this.bto_sair);
-            this.groupBox3.Location = new System.Drawing.Point(12, 341);
+            this.groupBox3.Location = new System.Drawing.Point(121, 338);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(474, 36);
+            this.groupBox3.Size = new System.Drawing.Size(464, 36);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
@@ -365,7 +391,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 386);
+            this.ClientSize = new System.Drawing.Size(593, 386);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -390,11 +416,9 @@
         private GroupBox groupBox2;
         private TextBox txt_valorcusto;
         private TextBox txt_valorvenda;
-        private TextBox txt_unidade;
         private TextBox txt_peso;
         private TextBox txt_qtde;
         private TextBox txt_nome;
-        private TextBox txt_codigocategoria;
         private Label label3;
         private Label label6;
         private Label label5;
@@ -414,5 +438,9 @@
         private ComboBox cbo_status;
         private Label label12;
         private Label lbl_cadastro;
+        private Label label11;
+        private ComboBox cbo_codigocategoria;
+        private ComboBox cbo_nomecategoria;
+        private ComboBox cbo_unidade;
     }
 }
