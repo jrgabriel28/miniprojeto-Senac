@@ -13,11 +13,7 @@ namespace N8_miniprojeto
 {
     public partial class frmproduto : Form
     {
-        string stringConexao = "" +
-           "Data Source=localhost;" +
-           "Initial Catalog=N8_miniprojetodql;" +
-           "user ID=sa;" +
-           "Password=123456";
+        string stringConexao = frmlogin.stringConexao;
 
         public frmproduto()
         {
@@ -251,7 +247,7 @@ namespace N8_miniprojeto
                 "valorcusto_produto = " + txt_valorcusto.Text.Replace(",", ".") + "," +
                 "valorvenda_produto = " + txt_valorvenda.Text.Replace(",", ".") + "," +
                 "obs_produto = '" + txt_obs.Text + "'," +
-                "status_produto = '" + cbo_status.Text + "' " +
+                "status_produto = '" + cbo_status.Text.Trim() + "' " +
                 "where id_produto = " + txt_codigoproduto.Text;
 
             SqlConnection conn = new SqlConnection(stringConexao);

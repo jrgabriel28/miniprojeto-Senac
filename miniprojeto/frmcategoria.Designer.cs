@@ -68,9 +68,10 @@
             this.bto_codigo.Location = new System.Drawing.Point(145, 40);
             this.bto_codigo.Name = "bto_codigo";
             this.bto_codigo.Size = new System.Drawing.Size(41, 23);
-            this.bto_codigo.TabIndex = 2;
+            this.bto_codigo.TabIndex = 1;
             this.bto_codigo.Text = "...";
             this.bto_codigo.UseVisualStyleBackColor = true;
+            this.bto_codigo.Click += new System.EventHandler(this.bto_codigo_Click);
             // 
             // label1
             // 
@@ -123,7 +124,7 @@
             this.cbo_status.Location = new System.Drawing.Point(396, 37);
             this.cbo_status.Name = "cbo_status";
             this.cbo_status.Size = new System.Drawing.Size(102, 23);
-            this.cbo_status.TabIndex = 2;
+            this.cbo_status.TabIndex = 3;
             // 
             // txt_obs
             // 
@@ -131,7 +132,7 @@
             this.txt_obs.Multiline = true;
             this.txt_obs.Name = "txt_obs";
             this.txt_obs.Size = new System.Drawing.Size(481, 72);
-            this.txt_obs.TabIndex = 1;
+            this.txt_obs.TabIndex = 5;
             // 
             // txt_descricao
             // 
@@ -139,14 +140,14 @@
             this.txt_descricao.Multiline = true;
             this.txt_descricao.Name = "txt_descricao";
             this.txt_descricao.Size = new System.Drawing.Size(481, 72);
-            this.txt_descricao.TabIndex = 1;
+            this.txt_descricao.TabIndex = 4;
             // 
             // txt_nomeP
             // 
             this.txt_nomeP.Location = new System.Drawing.Point(17, 37);
             this.txt_nomeP.Name = "txt_nomeP";
             this.txt_nomeP.Size = new System.Drawing.Size(373, 23);
-            this.txt_nomeP.TabIndex = 1;
+            this.txt_nomeP.TabIndex = 2;
             // 
             // label4
             // 
@@ -193,7 +194,7 @@
             this.bto_cadastrar.Location = new System.Drawing.Point(99, 9);
             this.bto_cadastrar.Name = "bto_cadastrar";
             this.bto_cadastrar.Size = new System.Drawing.Size(75, 23);
-            this.bto_cadastrar.TabIndex = 0;
+            this.bto_cadastrar.TabIndex = 6;
             this.bto_cadastrar.Text = "Cadastrar";
             this.bto_cadastrar.UseVisualStyleBackColor = true;
             this.bto_cadastrar.Click += new System.EventHandler(this.bto_cadastrar_Click);
@@ -203,16 +204,17 @@
             this.bto_alterar.Location = new System.Drawing.Point(180, 9);
             this.bto_alterar.Name = "bto_alterar";
             this.bto_alterar.Size = new System.Drawing.Size(75, 23);
-            this.bto_alterar.TabIndex = 0;
+            this.bto_alterar.TabIndex = 7;
             this.bto_alterar.Text = "Alterar";
             this.bto_alterar.UseVisualStyleBackColor = true;
+            this.bto_alterar.Click += new System.EventHandler(this.bto_alterar_Click);
             // 
             // bto_limpar
             // 
             this.bto_limpar.Location = new System.Drawing.Point(261, 9);
             this.bto_limpar.Name = "bto_limpar";
             this.bto_limpar.Size = new System.Drawing.Size(75, 23);
-            this.bto_limpar.TabIndex = 0;
+            this.bto_limpar.TabIndex = 8;
             this.bto_limpar.Text = "Limpar";
             this.bto_limpar.UseVisualStyleBackColor = true;
             this.bto_limpar.Click += new System.EventHandler(this.bto_limpar_Click);
@@ -222,24 +224,27 @@
             this.bto_excluir.Location = new System.Drawing.Point(342, 9);
             this.bto_excluir.Name = "bto_excluir";
             this.bto_excluir.Size = new System.Drawing.Size(75, 23);
-            this.bto_excluir.TabIndex = 0;
+            this.bto_excluir.TabIndex = 9;
             this.bto_excluir.Text = "Excluir";
             this.bto_excluir.UseVisualStyleBackColor = true;
+            this.bto_excluir.Click += new System.EventHandler(this.bto_excluir_Click);
             // 
             // bto_sair
             // 
             this.bto_sair.Location = new System.Drawing.Point(423, 9);
             this.bto_sair.Name = "bto_sair";
             this.bto_sair.Size = new System.Drawing.Size(75, 23);
-            this.bto_sair.TabIndex = 0;
+            this.bto_sair.TabIndex = 10;
             this.bto_sair.Text = "Sair";
             this.bto_sair.UseVisualStyleBackColor = true;
             this.bto_sair.Click += new System.EventHandler(this.bto_sair_Click);
             // 
             // frmcategoria
             // 
+            this.AcceptButton = this.bto_cadastrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.bto_sair;
             this.ClientSize = new System.Drawing.Size(559, 426);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
