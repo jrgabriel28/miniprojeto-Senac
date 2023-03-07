@@ -259,6 +259,7 @@ namespace N8_miniprojeto
                 if (i > 0)
                 {
                     MessageBox.Show("Dados alterados com sucesso");
+                    CarregarGideProduto();
                 }
             }
             catch (Exception ex)
@@ -375,6 +376,7 @@ namespace N8_miniprojeto
                 {
                     MessageBox.Show("Dados excluidos com sucesso");
                     bto_limpar.PerformClick();
+                    CarregarGideProduto();
                 }
             }
             catch (Exception ex)

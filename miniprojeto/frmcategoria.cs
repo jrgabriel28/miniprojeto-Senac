@@ -84,6 +84,7 @@ namespace N8_miniprojeto
                 if (i > 0)
                 {
                     MessageBox.Show("Dados Cadastrados com sucesso!");
+                    CarregadarGrideCategoria();
 
                 }
 
@@ -157,6 +158,7 @@ namespace N8_miniprojeto
                 if (i > 0)
                 {
                     MessageBox.Show("Dados alterados com sucesso");
+                    CarregadarGrideCategoria();
                 }
             }
             catch (Exception ex)
@@ -220,6 +222,7 @@ namespace N8_miniprojeto
                 {
                     MessageBox.Show("Dados excluidos com sucesso");
                     bto_limpar.PerformClick();
+                    CarregadarGrideCategoria();
                 }
             }
             catch (Exception ex)
