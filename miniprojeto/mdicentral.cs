@@ -50,5 +50,10 @@ namespace N8_miniprojeto
         {
             Application.Exit();
         }
+
+        private void mdicentral_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

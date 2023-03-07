@@ -123,6 +123,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mini Projeto";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.mdicentral_FormClosed);
             this.Load += new System.EventHandler(this.MDIParent1_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();

@@ -189,7 +189,7 @@ namespace N8_miniprojeto
                 {
                     MessageBox.Show("Dados excluidos com sucesso");
                     bto_limpar.PerformClick();
-                    CarregarGridUsuario(.)
+                    CarregarGridUsuario();
                 }
             }
             catch (Exception ex)
