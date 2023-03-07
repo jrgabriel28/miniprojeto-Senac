@@ -47,6 +47,7 @@ namespace N8_miniprojeto
         {
             TestarConexao();
             CarregarComboBox();
+            CarregarGideProduto();
         }
 
         private void CarregarComboBox()
@@ -80,16 +81,12 @@ namespace N8_miniprojeto
             finally
             {
                 conn.Close();
-            }
-
-
-            
+            }    
 
         }
 
         private void bto_cadastrar_Click(object sender, EventArgs e)
         {
-
             string sql = "insert into produto " + "(" +
                          "id_categoria_produto, " +
                          "nome_produto," +
@@ -196,6 +193,7 @@ namespace N8_miniprojeto
                     MessageBox.Show("ID Gerado - " + leitura[0].ToString());
                     txt_codigoproduto.Text = leitura[0].ToString();
                     bto_codigoproduto.PerformClick();
+                    CarregarGideProduto();
                 }
             }
             catch (Exception ex)
@@ -321,6 +319,44 @@ namespace N8_miniprojeto
             }
         }
 
+        private void CarregarGideProduto()
+        {
+            string sql = "select " +
+                "id_produto as 'ID'," +
+                "id_categoria_produto as 'ID do Produto'," +
+                "nome_produto as 'Nome'," +
+                "qtde_produto as 'Qtde'," +
+                "peso_produto as 'Peso'," +
+                "unidade_produto as 'Unidade'," +
+                "cadastro_produto as 'Data de Cadastro'," +
+                "valorcusto_produto as 'Valor de Custo'," +
+                "valorvenda_produto as 'Valor de Venda'," +
+                "status_produto as 'Status'" +
+                " from produto where nome_produto like '%" + txt_pesquisar.Text + "%'";
+
+            SqlConnection conn = new SqlConnection(stringConexao);
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+            DataSet ds = new DataSet();
+            conn.Open();
+
+            try
+            {
+                adapter.Fill(ds);
+                datagridproduto.DataSource = ds.Tables[0];
+                datagridproduto.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                datagridproduto.AutoResizeRow(0, DataGridViewAutoSizeRowMode.AllCellsExceptHeader);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         private void bto_excluir_Click(object sender, EventArgs e)
         {
             string sql = "delete produto where id_produto = " + txt_codigoproduto.Text;
@@ -351,5 +387,20 @@ namespace N8_miniprojeto
             }
         }
 
+        private void txt_pesquisar_TextChanged(object sender, EventArgs e)
+        {
+            CarregarGideProduto();
+        }
+
+        private void datagridproduto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_codigoproduto.Text = datagridproduto.CurrentRow.Cells["ID"].Value.ToString();
+            bto_codigoproduto.PerformClick();
+        }
+
+        private void cbo_status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

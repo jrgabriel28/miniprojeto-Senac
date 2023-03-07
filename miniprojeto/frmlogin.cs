@@ -49,7 +49,7 @@ namespace N8_miniprojeto
 
             string sql = "select * from usuario where " +
                          "login_usuario = '" + txt_usuario.Text + "' and " +
-                         "senha_usuario = '" + txt_usuario.Text + "'";
+                         "senha_usuario = '" + txt_senha.Text + "'";
 
             SqlConnection conn = new SqlConnection(stringConexao);
             SqlCommand cmd = new SqlCommand(sql, conn);

@@ -66,6 +66,7 @@ namespace N8_miniprojeto
         private void frmminiprojeto_Load(object sender, EventArgs e)
         {
             TestarConexao();
+            CarregarGridUsuario();
         }
 
 
@@ -84,7 +85,8 @@ namespace N8_miniprojeto
                          "'" + txt_senha.Text + "'," +
                          "'" + mask_cpf.Text + "'," +
                          "'" + txt_obs.Text + "'," +
-                         "'" + cbo_status.Text + "'" + ")";
+                         "'" + cbo_status.Text + "'" +
+                         ")select SCOPE_IDENTITY()";
 
             //Campo NOME
 
@@ -151,6 +153,7 @@ namespace N8_miniprojeto
                     MessageBox.Show("ID Gerado - " + leitura[0].ToString());
                     txt_codigo.Text = leitura[0].ToString();
                     bto_codigo.PerformClick();
+                    CarregarGridUsuario();
                 }
             }
             catch (Exception ex)
@@ -186,6 +189,7 @@ namespace N8_miniprojeto
                 {
                     MessageBox.Show("Dados excluidos com sucesso");
                     bto_limpar.PerformClick();
+                    CarregarGridUsuario(.)
                 }
             }
             catch (Exception ex)
@@ -225,6 +229,7 @@ namespace N8_miniprojeto
                 if (i > 0)
                 {
                     MessageBox.Show("Dados alterados com sucesso");
+                    CarregarGridUsuario();
                 }
             }
             catch (Exception ex)
@@ -274,6 +279,58 @@ namespace N8_miniprojeto
             {
                 conn.Close();
             }
+        }
+
+
+        private void CarregarGridUsuario()
+        {
+            string sql = "select " +
+                "id_usuario as 'ID'," +
+                "nome_usuario as 'Nome'," +
+                "login_usuario as 'Login'," +
+                "cpf_usuario 'CPF'," +
+                "status_usuario 'Status'" +
+                " from usuario where nome_usuario like '%" + txt_pesquisar.Text + "%'";
+
+            SqlConnection conn = new SqlConnection(stringConexao);
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+            DataSet ds = new DataSet();
+            conn.Open();
+
+            try
+            {
+                adapter.Fill(ds);
+                datagridusuario.DataSource = ds.Tables[0];
+                datagridusuario.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                datagridusuario.AutoResizeRow(0, DataGridViewAutoSizeRowMode.AllCellsExceptHeader);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+        }
+
+        private void datagrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CarregarGridUsuario();
+        }
+
+        private void txt_pesquisar_TextChanged(object sender, EventArgs e)
+        {
+            CarregarGridUsuario();
+        }
+
+        private void datagridusuario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_codigo.Text = datagridusuario.CurrentRow.Cells["ID"].Value.ToString();
+            bto_codigo.PerformClick();
         }
     }
 }

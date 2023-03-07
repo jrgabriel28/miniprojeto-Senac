@@ -61,9 +61,15 @@
             this.bto_limpar = new System.Windows.Forms.Button();
             this.bto_excluir = new System.Windows.Forms.Button();
             this.bto_sair = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.datagridproduto = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_pesquisar = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridproduto)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -101,7 +107,7 @@
             this.bto_codigoproduto.Location = new System.Drawing.Point(137, 38);
             this.bto_codigoproduto.Name = "bto_codigoproduto";
             this.bto_codigoproduto.Size = new System.Drawing.Size(35, 23);
-            this.bto_codigoproduto.TabIndex = 2;
+            this.bto_codigoproduto.TabIndex = 1;
             this.bto_codigoproduto.Text = "...";
             this.bto_codigoproduto.UseVisualStyleBackColor = true;
             this.bto_codigoproduto.Click += new System.EventHandler(this.bto_codigoproduto_Click);
@@ -111,7 +117,7 @@
             this.txt_codigoproduto.Location = new System.Drawing.Point(8, 38);
             this.txt_codigoproduto.Name = "txt_codigoproduto";
             this.txt_codigoproduto.Size = new System.Drawing.Size(123, 23);
-            this.txt_codigoproduto.TabIndex = 1;
+            this.txt_codigoproduto.TabIndex = 0;
             this.txt_codigoproduto.TextChanged += new System.EventHandler(this.txt_codigo_TextChanged);
             // 
             // label1
@@ -155,12 +161,13 @@
             // 
             this.cbo_unidade.FormattingEnabled = true;
             this.cbo_unidade.Items.AddRange(new object[] {
-            "kg",
-            "g"});
+            "KG",
+            "G",
+            "ML"});
             this.cbo_unidade.Location = new System.Drawing.Point(504, 37);
             this.cbo_unidade.Name = "cbo_unidade";
             this.cbo_unidade.Size = new System.Drawing.Size(60, 23);
-            this.cbo_unidade.TabIndex = 6;
+            this.cbo_unidade.TabIndex = 5;
             // 
             // cbo_codigocategoria
             // 
@@ -168,7 +175,7 @@
             this.cbo_codigocategoria.Location = new System.Drawing.Point(443, 91);
             this.cbo_codigocategoria.Name = "cbo_codigocategoria";
             this.cbo_codigocategoria.Size = new System.Drawing.Size(121, 23);
-            this.cbo_codigocategoria.TabIndex = 5;
+            this.cbo_codigocategoria.TabIndex = 10;
             // 
             // cbo_nomecategoria
             // 
@@ -176,7 +183,7 @@
             this.cbo_nomecategoria.Location = new System.Drawing.Point(318, 91);
             this.cbo_nomecategoria.Name = "cbo_nomecategoria";
             this.cbo_nomecategoria.Size = new System.Drawing.Size(121, 23);
-            this.cbo_nomecategoria.TabIndex = 5;
+            this.cbo_nomecategoria.TabIndex = 9;
             // 
             // cbo_status
             // 
@@ -187,7 +194,8 @@
             this.cbo_status.Location = new System.Drawing.Point(220, 91);
             this.cbo_status.Name = "cbo_status";
             this.cbo_status.Size = new System.Drawing.Size(95, 23);
-            this.cbo_status.TabIndex = 4;
+            this.cbo_status.TabIndex = 8;
+            this.cbo_status.SelectedIndexChanged += new System.EventHandler(this.cbo_status_SelectedIndexChanged);
             // 
             // txt_obs
             // 
@@ -195,7 +203,7 @@
             this.txt_obs.Multiline = true;
             this.txt_obs.Name = "txt_obs";
             this.txt_obs.Size = new System.Drawing.Size(556, 88);
-            this.txt_obs.TabIndex = 3;
+            this.txt_obs.TabIndex = 11;
             this.txt_obs.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // txt_valorcusto
@@ -203,7 +211,7 @@
             this.txt_valorcusto.Location = new System.Drawing.Point(8, 91);
             this.txt_valorcusto.Name = "txt_valorcusto";
             this.txt_valorcusto.Size = new System.Drawing.Size(100, 23);
-            this.txt_valorcusto.TabIndex = 3;
+            this.txt_valorcusto.TabIndex = 6;
             this.txt_valorcusto.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // txt_valorvenda
@@ -211,28 +219,28 @@
             this.txt_valorvenda.Location = new System.Drawing.Point(114, 91);
             this.txt_valorvenda.Name = "txt_valorvenda";
             this.txt_valorvenda.Size = new System.Drawing.Size(100, 23);
-            this.txt_valorvenda.TabIndex = 3;
+            this.txt_valorvenda.TabIndex = 7;
             // 
             // txt_peso
             // 
             this.txt_peso.Location = new System.Drawing.Point(440, 37);
             this.txt_peso.Name = "txt_peso";
             this.txt_peso.Size = new System.Drawing.Size(60, 23);
-            this.txt_peso.TabIndex = 2;
+            this.txt_peso.TabIndex = 4;
             // 
             // txt_qtde
             // 
             this.txt_qtde.Location = new System.Drawing.Point(374, 37);
             this.txt_qtde.Name = "txt_qtde";
             this.txt_qtde.Size = new System.Drawing.Size(60, 23);
-            this.txt_qtde.TabIndex = 2;
+            this.txt_qtde.TabIndex = 3;
             // 
             // txt_nome
             // 
             this.txt_nome.Location = new System.Drawing.Point(8, 37);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(360, 23);
-            this.txt_nome.TabIndex = 1;
+            this.txt_nome.TabIndex = 2;
             // 
             // label11
             // 
@@ -342,7 +350,7 @@
             this.bto_cadastrar.Location = new System.Drawing.Point(52, 11);
             this.bto_cadastrar.Name = "bto_cadastrar";
             this.bto_cadastrar.Size = new System.Drawing.Size(75, 23);
-            this.bto_cadastrar.TabIndex = 0;
+            this.bto_cadastrar.TabIndex = 12;
             this.bto_cadastrar.Text = "Cadastrar";
             this.bto_cadastrar.UseVisualStyleBackColor = true;
             this.bto_cadastrar.Click += new System.EventHandler(this.bto_cadastrar_Click);
@@ -352,7 +360,7 @@
             this.bto_alterar.Location = new System.Drawing.Point(133, 11);
             this.bto_alterar.Name = "bto_alterar";
             this.bto_alterar.Size = new System.Drawing.Size(75, 23);
-            this.bto_alterar.TabIndex = 0;
+            this.bto_alterar.TabIndex = 13;
             this.bto_alterar.Text = "Alterar";
             this.bto_alterar.UseVisualStyleBackColor = true;
             this.bto_alterar.Click += new System.EventHandler(this.bto_alterar_Click);
@@ -362,7 +370,7 @@
             this.bto_limpar.Location = new System.Drawing.Point(214, 11);
             this.bto_limpar.Name = "bto_limpar";
             this.bto_limpar.Size = new System.Drawing.Size(75, 23);
-            this.bto_limpar.TabIndex = 0;
+            this.bto_limpar.TabIndex = 14;
             this.bto_limpar.Text = "Limpar";
             this.bto_limpar.UseVisualStyleBackColor = true;
             this.bto_limpar.Click += new System.EventHandler(this.bto_limpar_Click);
@@ -372,7 +380,7 @@
             this.bto_excluir.Location = new System.Drawing.Point(295, 11);
             this.bto_excluir.Name = "bto_excluir";
             this.bto_excluir.Size = new System.Drawing.Size(75, 23);
-            this.bto_excluir.TabIndex = 0;
+            this.bto_excluir.TabIndex = 15;
             this.bto_excluir.Text = "Excluir";
             this.bto_excluir.UseVisualStyleBackColor = true;
             this.bto_excluir.Click += new System.EventHandler(this.bto_excluir_Click);
@@ -382,16 +390,59 @@
             this.bto_sair.Location = new System.Drawing.Point(376, 11);
             this.bto_sair.Name = "bto_sair";
             this.bto_sair.Size = new System.Drawing.Size(75, 23);
-            this.bto_sair.TabIndex = 0;
+            this.bto_sair.TabIndex = 16;
             this.bto_sair.Text = "Sair";
             this.bto_sair.UseVisualStyleBackColor = true;
             this.bto_sair.Click += new System.EventHandler(this.bto_sair_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.datagridproduto);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.txt_pesquisar);
+            this.groupBox4.Location = new System.Drawing.Point(591, 12);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(392, 362);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            // 
+            // datagridproduto
+            // 
+            this.datagridproduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridproduto.Location = new System.Drawing.Point(6, 68);
+            this.datagridproduto.Name = "datagridproduto";
+            this.datagridproduto.ReadOnly = true;
+            this.datagridproduto.RowTemplate.Height = 25;
+            this.datagridproduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridproduto.Size = new System.Drawing.Size(379, 288);
+            this.datagridproduto.TabIndex = 2;
+            this.datagridproduto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridproduto_CellClick);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 21);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(103, 15);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Pesquisar Produto";
+            // 
+            // txt_pesquisar
+            // 
+            this.txt_pesquisar.Location = new System.Drawing.Point(6, 39);
+            this.txt_pesquisar.Name = "txt_pesquisar";
+            this.txt_pesquisar.Size = new System.Drawing.Size(379, 23);
+            this.txt_pesquisar.TabIndex = 17;
+            this.txt_pesquisar.TextChanged += new System.EventHandler(this.txt_pesquisar_TextChanged);
+            // 
             // frmproduto
             // 
+            this.AcceptButton = this.bto_cadastrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 386);
+            this.CancelButton = this.bto_sair;
+            this.ClientSize = new System.Drawing.Size(988, 386);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -403,6 +454,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridproduto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -442,5 +496,9 @@
         private ComboBox cbo_codigocategoria;
         private ComboBox cbo_nomecategoria;
         private ComboBox cbo_unidade;
+        private GroupBox groupBox4;
+        private DataGridView datagridproduto;
+        private Label label13;
+        private TextBox txt_pesquisar;
     }
 }

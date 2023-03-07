@@ -47,9 +47,15 @@
             this.bto_limpar = new System.Windows.Forms.Button();
             this.bto_excluir = new System.Windows.Forms.Button();
             this.bto_sair = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.datagridecategoria = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_pesquisar = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridecategoria)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -239,24 +245,69 @@
             this.bto_sair.UseVisualStyleBackColor = true;
             this.bto_sair.Click += new System.EventHandler(this.bto_sair_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.datagridecategoria);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.txt_pesquisar);
+            this.groupBox4.Location = new System.Drawing.Point(539, 12);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(358, 401);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            // 
+            // datagridecategoria
+            // 
+            this.datagridecategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridecategoria.Location = new System.Drawing.Point(6, 70);
+            this.datagridecategoria.Name = "datagridecategoria";
+            this.datagridecategoria.ReadOnly = true;
+            this.datagridecategoria.RowTemplate.Height = 25;
+            this.datagridecategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridecategoria.Size = new System.Drawing.Size(346, 325);
+            this.datagridecategoria.TabIndex = 2;
+            this.datagridecategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridecategoria_CellClick);
+            this.datagridecategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridecategoria_CellContentClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 15);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Pesquisar Categoria";
+            // 
+            // txt_pesquisar
+            // 
+            this.txt_pesquisar.Location = new System.Drawing.Point(6, 41);
+            this.txt_pesquisar.Name = "txt_pesquisar";
+            this.txt_pesquisar.Size = new System.Drawing.Size(346, 23);
+            this.txt_pesquisar.TabIndex = 11;
+            this.txt_pesquisar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // frmcategoria
             // 
             this.AcceptButton = this.bto_cadastrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bto_sair;
-            this.ClientSize = new System.Drawing.Size(559, 426);
+            this.ClientSize = new System.Drawing.Size(909, 426);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmcategoria";
-            this.Text = "Cadastro do Produto";
+            this.Text = "Cadastro do Categoria";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridecategoria)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -282,5 +333,9 @@
         private Button bto_limpar;
         private Button bto_excluir;
         private Button bto_sair;
+        private GroupBox groupBox4;
+        private DataGridView datagridecategoria;
+        private Label label6;
+        private TextBox txt_pesquisar;
     }
 }

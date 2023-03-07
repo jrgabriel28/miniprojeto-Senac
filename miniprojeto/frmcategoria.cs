@@ -42,6 +42,7 @@ namespace N8_miniprojeto
         private void Form1_Load(object sender, EventArgs e)
         {
             TestarConexao();
+            CarregadarGrideCategoria();
         }
 
         private void bto_sair_Click(object sender, EventArgs e)
@@ -168,9 +169,44 @@ namespace N8_miniprojeto
             }
         }
 
+        private void CarregadarGrideCategoria()
+        {
+            string sql = "select " +
+                "id_categoria as 'ID'," +
+                "nome_categoria as 'Nome'," +
+                "descricao_categoria as 'Descrição'," +
+                "status_categoria as 'Status'" +
+                " from categoria where nome_categoria like '%" + txt_pesquisar.Text + "%'";
+
+            SqlConnection conn = new SqlConnection(stringConexao);
+            SqlDataAdapter adapter = new SqlDataAdapter(sql,conn);
+            DataSet ds = new DataSet();
+            conn.Open();
+
+            try
+            {
+                adapter.Fill(ds);
+                datagridecategoria.DataSource = ds.Tables[0];
+                datagridecategoria.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                datagridecategoria.AutoResizeRow(0, DataGridViewAutoSizeRowMode.AllCellsExceptHeader);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
+
+
         private void bto_excluir_Click(object sender, EventArgs e)
         {
-            string sql = "delete produto where id_categoria = " + txt_codigo.Text;
+            string sql = "delete categoria where id_categoria = " + txt_codigo.Text;
 
             SqlConnection conn = new SqlConnection(stringConexao);
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -195,5 +231,21 @@ namespace N8_miniprojeto
                 conn.Close();
             }
         }
-    }
+
+        private void datagridecategoria_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_codigo.Text = datagridecategoria.CurrentRow.Cells["ID"].Value.ToString();
+            bto_codigo.PerformClick();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            CarregadarGrideCategoria();
+        }
+
+        private void datagridecategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CarregadarGrideCategoria();
+        }
+    }   
 }

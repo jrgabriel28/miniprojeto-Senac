@@ -34,10 +34,10 @@
             this.cadastroDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeProdutosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeProdutosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.sToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +85,13 @@
             this.cadastroDeProdutosToolStripMenuItem1.Text = "Produtos";
             this.cadastroDeProdutosToolStripMenuItem1.Click += new System.EventHandler(this.cadastroDeProdutosToolStripMenuItem1_Click);
             // 
+            // sToolStripMenuItem
+            // 
+            this.sToolStripMenuItem.Name = "sToolStripMenuItem";
+            this.sToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sToolStripMenuItem.Text = "Sair";
+            this.sToolStripMenuItem.Click += new System.EventHandler(this.sToolStripMenuItem_Click);
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -102,13 +109,6 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // sToolStripMenuItem
-            // 
-            this.sToolStripMenuItem.Name = "sToolStripMenuItem";
-            this.sToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.sToolStripMenuItem.Text = "Sair";
-            this.sToolStripMenuItem.Click += new System.EventHandler(this.sToolStripMenuItem_Click);
-            // 
             // mdicentral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -120,7 +120,9 @@
             this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "mdicentral";
-            this.Text = "MDIParent1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Mini Projeto";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MDIParent1_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();

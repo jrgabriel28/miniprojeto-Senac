@@ -51,9 +51,15 @@
             this.bto_limpar = new System.Windows.Forms.Button();
             this.bto_excluir = new System.Windows.Forms.Button();
             this.bto_sair = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.datagridusuario = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_pesquisar = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridusuario)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -61,9 +67,9 @@
             this.groupBox1.Controls.Add(this.bto_codigo);
             this.groupBox1.Controls.Add(this.txt_codigo);
             this.groupBox1.Controls.Add(this.lbl_codigo);
-            this.groupBox1.Location = new System.Drawing.Point(12, 23);
+            this.groupBox1.Location = new System.Drawing.Point(7, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(618, 78);
+            this.groupBox1.Size = new System.Drawing.Size(515, 78);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -73,7 +79,7 @@
             this.bto_codigo.Location = new System.Drawing.Point(234, 37);
             this.bto_codigo.Name = "bto_codigo";
             this.bto_codigo.Size = new System.Drawing.Size(47, 24);
-            this.bto_codigo.TabIndex = 2;
+            this.bto_codigo.TabIndex = 1;
             this.bto_codigo.Text = "...";
             this.bto_codigo.UseVisualStyleBackColor = true;
             this.bto_codigo.Click += new System.EventHandler(this.bto_codigo_Click);
@@ -83,7 +89,7 @@
             this.txt_codigo.Location = new System.Drawing.Point(17, 37);
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(211, 23);
-            this.txt_codigo.TabIndex = 1;
+            this.txt_codigo.TabIndex = 0;
             this.txt_codigo.TextChanged += new System.EventHandler(this.txt_codigo_TextChanged);
             // 
             // lbl_codigo
@@ -109,9 +115,9 @@
             this.groupBox2.Controls.Add(this.lbl_obs);
             this.groupBox2.Controls.Add(this.lbl_login);
             this.groupBox2.Controls.Add(this.lbl_nome);
-            this.groupBox2.Location = new System.Drawing.Point(12, 107);
+            this.groupBox2.Location = new System.Drawing.Point(7, 92);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(618, 257);
+            this.groupBox2.Size = new System.Drawing.Size(515, 257);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
@@ -121,13 +127,13 @@
             this.txt_obs.Location = new System.Drawing.Point(17, 145);
             this.txt_obs.Multiline = true;
             this.txt_obs.Name = "txt_obs";
-            this.txt_obs.Size = new System.Drawing.Size(592, 100);
+            this.txt_obs.Size = new System.Drawing.Size(487, 100);
             this.txt_obs.TabIndex = 7;
             // 
             // lbl_status
             // 
             this.lbl_status.AutoSize = true;
-            this.lbl_status.Location = new System.Drawing.Point(514, 73);
+            this.lbl_status.Location = new System.Drawing.Point(409, 73);
             this.lbl_status.Name = "lbl_status";
             this.lbl_status.Size = new System.Drawing.Size(39, 15);
             this.lbl_status.TabIndex = 6;
@@ -140,7 +146,7 @@
             this.cbo_status.Items.AddRange(new object[] {
             "Ativo",
             "Inativo"});
-            this.cbo_status.Location = new System.Drawing.Point(514, 91);
+            this.cbo_status.Location = new System.Drawing.Point(409, 91);
             this.cbo_status.Name = "cbo_status";
             this.cbo_status.Size = new System.Drawing.Size(95, 23);
             this.cbo_status.TabIndex = 6;
@@ -148,7 +154,7 @@
             // lbl_cpf
             // 
             this.lbl_cpf.AutoSize = true;
-            this.lbl_cpf.Location = new System.Drawing.Point(367, 73);
+            this.lbl_cpf.Location = new System.Drawing.Point(287, 73);
             this.lbl_cpf.Name = "lbl_cpf";
             this.lbl_cpf.Size = new System.Drawing.Size(28, 15);
             this.lbl_cpf.TabIndex = 4;
@@ -157,7 +163,7 @@
             // lbl_senha
             // 
             this.lbl_senha.AutoSize = true;
-            this.lbl_senha.Location = new System.Drawing.Point(192, 73);
+            this.lbl_senha.Location = new System.Drawing.Point(152, 73);
             this.lbl_senha.Name = "lbl_senha";
             this.lbl_senha.Size = new System.Drawing.Size(39, 15);
             this.lbl_senha.TabIndex = 4;
@@ -165,26 +171,26 @@
             // 
             // mask_cpf
             // 
-            this.mask_cpf.Location = new System.Drawing.Point(367, 91);
+            this.mask_cpf.Location = new System.Drawing.Point(287, 91);
             this.mask_cpf.Mask = "###.###.###-##";
             this.mask_cpf.Name = "mask_cpf";
-            this.mask_cpf.Size = new System.Drawing.Size(141, 23);
+            this.mask_cpf.Size = new System.Drawing.Size(116, 23);
             this.mask_cpf.TabIndex = 5;
             // 
             // txt_login
             // 
             this.txt_login.Location = new System.Drawing.Point(17, 91);
             this.txt_login.Name = "txt_login";
-            this.txt_login.Size = new System.Drawing.Size(169, 23);
+            this.txt_login.Size = new System.Drawing.Size(129, 23);
             this.txt_login.TabIndex = 3;
             this.txt_login.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txt_senha
             // 
-            this.txt_senha.Location = new System.Drawing.Point(192, 91);
+            this.txt_senha.Location = new System.Drawing.Point(152, 91);
             this.txt_senha.Name = "txt_senha";
             this.txt_senha.PasswordChar = '*';
-            this.txt_senha.Size = new System.Drawing.Size(169, 23);
+            this.txt_senha.Size = new System.Drawing.Size(129, 23);
             this.txt_senha.TabIndex = 4;
             this.txt_senha.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -192,7 +198,7 @@
             // 
             this.txt_nome.Location = new System.Drawing.Point(17, 37);
             this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(592, 23);
+            this.txt_nome.Size = new System.Drawing.Size(487, 23);
             this.txt_nome.TabIndex = 2;
             // 
             // lbl_obs
@@ -229,61 +235,103 @@
             this.groupBox3.Controls.Add(this.bto_limpar);
             this.groupBox3.Controls.Add(this.bto_excluir);
             this.groupBox3.Controls.Add(this.bto_sair);
-            this.groupBox3.Location = new System.Drawing.Point(12, 370);
+            this.groupBox3.Location = new System.Drawing.Point(7, 355);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(618, 37);
+            this.groupBox3.Size = new System.Drawing.Size(515, 37);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
             // bto_cadastrar
             // 
-            this.bto_cadastrar.Location = new System.Drawing.Point(174, 9);
+            this.bto_cadastrar.Location = new System.Drawing.Point(71, 9);
             this.bto_cadastrar.Name = "bto_cadastrar";
             this.bto_cadastrar.Size = new System.Drawing.Size(75, 23);
-            this.bto_cadastrar.TabIndex = 0;
+            this.bto_cadastrar.TabIndex = 8;
             this.bto_cadastrar.Text = "Cadastrar";
             this.bto_cadastrar.UseVisualStyleBackColor = true;
             this.bto_cadastrar.Click += new System.EventHandler(this.bto_cadastrar_Click);
             // 
             // bto_alterar
             // 
-            this.bto_alterar.Location = new System.Drawing.Point(266, 9);
+            this.bto_alterar.Location = new System.Drawing.Point(163, 9);
             this.bto_alterar.Name = "bto_alterar";
             this.bto_alterar.Size = new System.Drawing.Size(75, 23);
-            this.bto_alterar.TabIndex = 0;
+            this.bto_alterar.TabIndex = 9;
             this.bto_alterar.Text = "Alterar";
             this.bto_alterar.UseVisualStyleBackColor = true;
             this.bto_alterar.Click += new System.EventHandler(this.bto_alterar_Click);
             // 
             // bto_limpar
             // 
-            this.bto_limpar.Location = new System.Drawing.Point(357, 9);
+            this.bto_limpar.Location = new System.Drawing.Point(254, 9);
             this.bto_limpar.Name = "bto_limpar";
             this.bto_limpar.Size = new System.Drawing.Size(75, 23);
-            this.bto_limpar.TabIndex = 0;
+            this.bto_limpar.TabIndex = 10;
             this.bto_limpar.Text = "Limpar";
             this.bto_limpar.UseVisualStyleBackColor = true;
             this.bto_limpar.Click += new System.EventHandler(this.bto_limpar_Click);
             // 
             // bto_excluir
             // 
-            this.bto_excluir.Location = new System.Drawing.Point(448, 9);
+            this.bto_excluir.Location = new System.Drawing.Point(345, 9);
             this.bto_excluir.Name = "bto_excluir";
             this.bto_excluir.Size = new System.Drawing.Size(75, 23);
-            this.bto_excluir.TabIndex = 0;
+            this.bto_excluir.TabIndex = 11;
             this.bto_excluir.Text = "Excluir";
             this.bto_excluir.UseVisualStyleBackColor = true;
             this.bto_excluir.Click += new System.EventHandler(this.bto_excluir_Click);
             // 
             // bto_sair
             // 
-            this.bto_sair.Location = new System.Drawing.Point(534, 9);
+            this.bto_sair.Location = new System.Drawing.Point(431, 9);
             this.bto_sair.Name = "bto_sair";
             this.bto_sair.Size = new System.Drawing.Size(75, 23);
-            this.bto_sair.TabIndex = 0;
+            this.bto_sair.TabIndex = 12;
             this.bto_sair.Text = "Sair";
             this.bto_sair.UseVisualStyleBackColor = true;
             this.bto_sair.Click += new System.EventHandler(this.bto_sair_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.datagridusuario);
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.txt_pesquisar);
+            this.groupBox4.Location = new System.Drawing.Point(528, 8);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(365, 384);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            // 
+            // datagridusuario
+            // 
+            this.datagridusuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridusuario.Location = new System.Drawing.Point(6, 68);
+            this.datagridusuario.Name = "datagridusuario";
+            this.datagridusuario.ReadOnly = true;
+            this.datagridusuario.RowTemplate.Height = 25;
+            this.datagridusuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridusuario.Size = new System.Drawing.Size(353, 311);
+            this.datagridusuario.TabIndex = 2;
+            this.datagridusuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridusuario_CellClick);
+            this.datagridusuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Tag = "";
+            this.label1.Text = "Pesquisar usuário";
+            // 
+            // txt_pesquisar
+            // 
+            this.txt_pesquisar.Location = new System.Drawing.Point(6, 39);
+            this.txt_pesquisar.Name = "txt_pesquisar";
+            this.txt_pesquisar.Size = new System.Drawing.Size(353, 23);
+            this.txt_pesquisar.TabIndex = 13;
+            this.txt_pesquisar.TextChanged += new System.EventHandler(this.txt_pesquisar_TextChanged);
             // 
             // frmminiprojeto
             // 
@@ -291,7 +339,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bto_sair;
-            this.ClientSize = new System.Drawing.Size(637, 420);
+            this.ClientSize = new System.Drawing.Size(906, 399);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -303,6 +352,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridusuario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -332,5 +384,9 @@
         private Button bto_limpar;
         private Button bto_excluir;
         private Button bto_sair;
+        private GroupBox groupBox4;
+        private Label label1;
+        private TextBox txt_pesquisar;
+        private DataGridView datagridusuario;
     }
 }
