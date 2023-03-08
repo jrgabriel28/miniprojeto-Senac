@@ -332,5 +332,16 @@ namespace N8_miniprojeto
             txt_codigo.Text = datagridusuario.CurrentRow.Cells["ID"].Value.ToString();
             bto_codigo.PerformClick();
         }
+
+        private void bto_pesquisaavance_Click(object sender, EventArgs e)
+        {
+            if (txt_codigo.Text.Trim() == "" )
+            {
+                frmpesquisausuario frm = new frmpesquisausuario();
+                frm.ShowDialog();
+                txt_codigo.Text = frm._codigo;
+                bto_codigo.PerformClick();
+            }
+        }
     }
 }

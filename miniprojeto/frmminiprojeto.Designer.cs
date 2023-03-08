@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bto_pesquisaavance = new System.Windows.Forms.Button();
             this.bto_codigo = new System.Windows.Forms.Button();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.lbl_codigo = new System.Windows.Forms.Label();
@@ -64,6 +65,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.bto_pesquisaavance);
             this.groupBox1.Controls.Add(this.bto_codigo);
             this.groupBox1.Controls.Add(this.txt_codigo);
             this.groupBox1.Controls.Add(this.lbl_codigo);
@@ -73,6 +75,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // bto_pesquisaavance
+            // 
+            this.bto_pesquisaavance.Location = new System.Drawing.Point(409, 39);
+            this.bto_pesquisaavance.Name = "bto_pesquisaavance";
+            this.bto_pesquisaavance.Size = new System.Drawing.Size(88, 23);
+            this.bto_pesquisaavance.TabIndex = 2;
+            this.bto_pesquisaavance.Text = "Pesquisar Usuário";
+            this.bto_pesquisaavance.UseVisualStyleBackColor = true;
+            this.bto_pesquisaavance.Click += new System.EventHandler(this.bto_pesquisaavance_Click);
             // 
             // bto_codigo
             // 
@@ -301,6 +313,7 @@
             this.groupBox4.Size = new System.Drawing.Size(365, 384);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
+            this.groupBox4.Visible = false;
             // 
             // datagridusuario
             // 
@@ -339,7 +352,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bto_sair;
-            this.ClientSize = new System.Drawing.Size(906, 399);
+            this.ClientSize = new System.Drawing.Size(524, 399);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -388,5 +401,6 @@
         private Label label1;
         private TextBox txt_pesquisar;
         private DataGridView datagridusuario;
+        private Button bto_pesquisaavance;
     }
 }

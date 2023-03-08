@@ -65,6 +65,7 @@
             this.datagridproduto = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
             this.txt_pesquisar = new System.Windows.Forms.TextBox();
+            this.bto_pesquisaavancada = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -74,6 +75,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.bto_pesquisaavancada);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.lbl_cadastro);
             this.groupBox1.Controls.Add(this.bto_codigoproduto);
@@ -171,22 +173,27 @@
             // 
             // cbo_codigocategoria
             // 
+            this.cbo_codigocategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_codigocategoria.FormattingEnabled = true;
             this.cbo_codigocategoria.Location = new System.Drawing.Point(443, 91);
             this.cbo_codigocategoria.Name = "cbo_codigocategoria";
             this.cbo_codigocategoria.Size = new System.Drawing.Size(121, 23);
             this.cbo_codigocategoria.TabIndex = 10;
+            this.cbo_codigocategoria.SelectedIndexChanged += new System.EventHandler(this.cbo_codigocategoria_SelectedIndexChanged);
             // 
             // cbo_nomecategoria
             // 
+            this.cbo_nomecategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_nomecategoria.FormattingEnabled = true;
             this.cbo_nomecategoria.Location = new System.Drawing.Point(318, 91);
             this.cbo_nomecategoria.Name = "cbo_nomecategoria";
             this.cbo_nomecategoria.Size = new System.Drawing.Size(121, 23);
             this.cbo_nomecategoria.TabIndex = 9;
+            this.cbo_nomecategoria.SelectedIndexChanged += new System.EventHandler(this.cbo_nomecategoria_SelectedIndexChanged);
             // 
             // cbo_status
             // 
+            this.cbo_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_status.FormattingEnabled = true;
             this.cbo_status.Items.AddRange(new object[] {
             "Ativo",
@@ -417,6 +424,7 @@
             this.datagridproduto.Size = new System.Drawing.Size(379, 288);
             this.datagridproduto.TabIndex = 2;
             this.datagridproduto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridproduto_CellClick);
+            this.datagridproduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridproduto_CellContentClick);
             // 
             // label13
             // 
@@ -434,6 +442,16 @@
             this.txt_pesquisar.Size = new System.Drawing.Size(379, 23);
             this.txt_pesquisar.TabIndex = 17;
             this.txt_pesquisar.TextChanged += new System.EventHandler(this.txt_pesquisar_TextChanged);
+            // 
+            // bto_pesquisaavancada
+            // 
+            this.bto_pesquisaavancada.Location = new System.Drawing.Point(178, 39);
+            this.bto_pesquisaavancada.Name = "bto_pesquisaavancada";
+            this.bto_pesquisaavancada.Size = new System.Drawing.Size(75, 23);
+            this.bto_pesquisaavancada.TabIndex = 5;
+            this.bto_pesquisaavancada.Text = "button1";
+            this.bto_pesquisaavancada.UseVisualStyleBackColor = true;
+            this.bto_pesquisaavancada.Click += new System.EventHandler(this.bto_pesquisaavancada_Click);
             // 
             // frmproduto
             // 
@@ -500,5 +518,6 @@
         private DataGridView datagridproduto;
         private Label label13;
         private TextBox txt_pesquisar;
+        private Button bto_pesquisaavancada;
     }
 }

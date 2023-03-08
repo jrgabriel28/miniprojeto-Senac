@@ -26,3 +26,4 @@ C:\Users\gabriel.dsantos15\source\repos\miniprojeto\miniprojeto\obj\Debug\net6.0
 C:\Users\gabriel.dsantos15\source\repos\miniprojeto\miniprojeto\obj\Debug\net6.0-windows\N8_miniprojeto.frmcategoria.resources
 C:\Users\gabriel.dsantos15\source\repos\miniprojeto\miniprojeto\obj\Debug\net6.0-windows\N8_miniprojeto.frmproduto.resources
 C:\Users\gabriel.dsantos15\source\repos\miniprojeto\miniprojeto\obj\Debug\net6.0-windows\N8_miniprojeto.frmlogin.resources
+C:\Users\gabriel.dsantos15\source\repos\miniprojeto\miniprojeto\obj\Debug\net6.0-windows\N8_miniprojeto.frmpesquisausuario.resources

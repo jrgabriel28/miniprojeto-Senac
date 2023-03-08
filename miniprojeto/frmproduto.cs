@@ -404,5 +404,25 @@ namespace N8_miniprojeto
         {
 
         }
+
+        private void cbo_codigocategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbo_nomecategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void datagridproduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void bto_pesquisaavancada_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
