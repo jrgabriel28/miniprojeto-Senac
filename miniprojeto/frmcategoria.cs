@@ -56,6 +56,7 @@ namespace N8_miniprojeto
             txt_descricao.Text = "";
             txt_obs.Text = "";
             cbo_status.SelectedIndex = -1;
+            txt_codigo.Text = "";
         }
 
         private void bto_cadastrar_Click(object sender, EventArgs e)
@@ -69,34 +70,37 @@ namespace N8_miniprojeto
                 "'" + txt_nomeP.Text + "'," +
                 "'" + txt_descricao.Text + "'," +
                 "'" + txt_obs.Text + "'," +
-                "'" + cbo_status.Text + "'" + ")";
+                "'" + cbo_status.Text + "'" +
+                ") select SCOPE_IDENTITY()";
 
 
             SqlConnection conn = new SqlConnection(stringConexao);
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.CommandType = CommandType.Text;
+            SqlDataReader leitura;
             conn.Open();
 
 
             try
             {
-                int i = cmd.ExecuteNonQuery();
-                if (i > 0)
+                leitura = cmd.ExecuteReader();
+                if (leitura.Read())
                 {
-                    MessageBox.Show("Dados Cadastrados com sucesso!");
-                    CarregadarGrideCategoria();
-
+                    MessageBox.Show("Dados cadastrados com sucesso");
+                    bto_limpar.PerformClick();
+                    MessageBox.Show("ID Gerado - " + leitura[0].ToString());
+                    txt_codigo.Text = leitura[0].ToString();
+                    bto_codigo.PerformClick();
                 }
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro! " + ex.Message);
-
+                MessageBox.Show("Erro " + ex.Message);
             }
             finally
             {
                 conn.Close();
+
             }
         }
 
@@ -249,6 +253,25 @@ namespace N8_miniprojeto
         private void datagridecategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             CarregadarGrideCategoria();
+        }
+
+        private void bto_pesquisaavanc_Click(object sender, EventArgs e)
+        {
+            if (txt_codigo.Text.Trim() == "" )
+            {
+                frmpesquisacategoria frm = new frmpesquisacategoria();
+                frm.ShowDialog();
+                txt_codigo.Text = frm._codigo;
+                bto_codigo.PerformClick();
+            }
+        }
+
+        private void txt_codigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }   
 }

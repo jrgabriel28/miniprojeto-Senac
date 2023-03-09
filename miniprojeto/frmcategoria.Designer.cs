@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bto_pesquisaavanc = new System.Windows.Forms.Button();
             this.bto_codigo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_codigo = new System.Windows.Forms.TextBox();
@@ -60,6 +61,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.bto_pesquisaavanc);
             this.groupBox1.Controls.Add(this.bto_codigo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txt_codigo);
@@ -69,9 +71,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // bto_pesquisaavanc
+            // 
+            this.bto_pesquisaavanc.Location = new System.Drawing.Point(192, 41);
+            this.bto_pesquisaavanc.Name = "bto_pesquisaavanc";
+            this.bto_pesquisaavanc.Size = new System.Drawing.Size(133, 23);
+            this.bto_pesquisaavanc.TabIndex = 2;
+            this.bto_pesquisaavanc.Text = "Pesquisar Categorias";
+            this.bto_pesquisaavanc.UseVisualStyleBackColor = true;
+            this.bto_pesquisaavanc.Click += new System.EventHandler(this.bto_pesquisaavanc_Click);
+            // 
             // bto_codigo
             // 
-            this.bto_codigo.Location = new System.Drawing.Point(145, 40);
+            this.bto_codigo.Location = new System.Drawing.Point(145, 41);
             this.bto_codigo.Name = "bto_codigo";
             this.bto_codigo.Size = new System.Drawing.Size(41, 23);
             this.bto_codigo.TabIndex = 1;
@@ -94,6 +106,7 @@
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(122, 23);
             this.txt_codigo.TabIndex = 0;
+            this.txt_codigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_codigo_KeyPress);
             // 
             // groupBox2
             // 
@@ -255,6 +268,7 @@
             this.groupBox4.Size = new System.Drawing.Size(358, 401);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
+            this.groupBox4.Visible = false;
             // 
             // datagridecategoria
             // 
@@ -292,7 +306,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bto_sair;
-            this.ClientSize = new System.Drawing.Size(909, 426);
+            this.ClientSize = new System.Drawing.Size(542, 426);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -337,5 +351,6 @@
         private DataGridView datagridecategoria;
         private Label label6;
         private TextBox txt_pesquisar;
+        private Button bto_pesquisaavanc;
     }
 }

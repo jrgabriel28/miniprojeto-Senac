@@ -343,5 +343,13 @@ namespace N8_miniprojeto
                 bto_codigo.PerformClick();
             }
         }
+
+        private void txt_codigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

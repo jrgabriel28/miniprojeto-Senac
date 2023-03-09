@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bto_pesquisaavancada = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.lbl_cadastro = new System.Windows.Forms.Label();
             this.bto_codigoproduto = new System.Windows.Forms.Button();
@@ -65,7 +66,6 @@
             this.datagridproduto = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
             this.txt_pesquisar = new System.Windows.Forms.TextBox();
-            this.bto_pesquisaavancada = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -86,6 +86,16 @@
             this.groupBox1.Size = new System.Drawing.Size(573, 69);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // bto_pesquisaavancada
+            // 
+            this.bto_pesquisaavancada.Location = new System.Drawing.Point(178, 38);
+            this.bto_pesquisaavancada.Name = "bto_pesquisaavancada";
+            this.bto_pesquisaavancada.Size = new System.Drawing.Size(137, 23);
+            this.bto_pesquisaavancada.TabIndex = 5;
+            this.bto_pesquisaavancada.Text = "Pesquisar Produto";
+            this.bto_pesquisaavancada.UseVisualStyleBackColor = true;
+            this.bto_pesquisaavancada.Click += new System.EventHandler(this.bto_pesquisaavancada_Click);
             // 
             // label12
             // 
@@ -121,6 +131,7 @@
             this.txt_codigoproduto.Size = new System.Drawing.Size(123, 23);
             this.txt_codigoproduto.TabIndex = 0;
             this.txt_codigoproduto.TextChanged += new System.EventHandler(this.txt_codigo_TextChanged);
+            this.txt_codigoproduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_codigoproduto_KeyPress);
             // 
             // label1
             // 
@@ -161,10 +172,12 @@
             // 
             // cbo_unidade
             // 
+            this.cbo_unidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_unidade.FormattingEnabled = true;
             this.cbo_unidade.Items.AddRange(new object[] {
             "KG",
             "G",
+            "L",
             "ML"});
             this.cbo_unidade.Location = new System.Drawing.Point(504, 37);
             this.cbo_unidade.Name = "cbo_unidade";
@@ -220,6 +233,7 @@
             this.txt_valorcusto.Size = new System.Drawing.Size(100, 23);
             this.txt_valorcusto.TabIndex = 6;
             this.txt_valorcusto.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.txt_valorcusto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_valorcusto_KeyPress);
             // 
             // txt_valorvenda
             // 
@@ -227,6 +241,7 @@
             this.txt_valorvenda.Name = "txt_valorvenda";
             this.txt_valorvenda.Size = new System.Drawing.Size(100, 23);
             this.txt_valorvenda.TabIndex = 7;
+            this.txt_valorvenda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_valorvenda_KeyPress);
             // 
             // txt_peso
             // 
@@ -234,6 +249,7 @@
             this.txt_peso.Name = "txt_peso";
             this.txt_peso.Size = new System.Drawing.Size(60, 23);
             this.txt_peso.TabIndex = 4;
+            this.txt_peso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_peso_KeyPress);
             // 
             // txt_qtde
             // 
@@ -241,6 +257,8 @@
             this.txt_qtde.Name = "txt_qtde";
             this.txt_qtde.Size = new System.Drawing.Size(60, 23);
             this.txt_qtde.TabIndex = 3;
+            this.txt_qtde.TextChanged += new System.EventHandler(this.txt_qtde_TextChanged);
+            this.txt_qtde.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_qtde_KeyPress);
             // 
             // txt_nome
             // 
@@ -412,6 +430,7 @@
             this.groupBox4.Size = new System.Drawing.Size(392, 362);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
+            this.groupBox4.Visible = false;
             // 
             // datagridproduto
             // 
@@ -443,23 +462,13 @@
             this.txt_pesquisar.TabIndex = 17;
             this.txt_pesquisar.TextChanged += new System.EventHandler(this.txt_pesquisar_TextChanged);
             // 
-            // bto_pesquisaavancada
-            // 
-            this.bto_pesquisaavancada.Location = new System.Drawing.Point(178, 39);
-            this.bto_pesquisaavancada.Name = "bto_pesquisaavancada";
-            this.bto_pesquisaavancada.Size = new System.Drawing.Size(75, 23);
-            this.bto_pesquisaavancada.TabIndex = 5;
-            this.bto_pesquisaavancada.Text = "button1";
-            this.bto_pesquisaavancada.UseVisualStyleBackColor = true;
-            this.bto_pesquisaavancada.Click += new System.EventHandler(this.bto_pesquisaavancada_Click);
-            // 
             // frmproduto
             // 
             this.AcceptButton = this.bto_cadastrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bto_sair;
-            this.ClientSize = new System.Drawing.Size(988, 386);
+            this.ClientSize = new System.Drawing.Size(590, 386);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

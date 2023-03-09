@@ -78,9 +78,9 @@
             // 
             // bto_pesquisaavance
             // 
-            this.bto_pesquisaavance.Location = new System.Drawing.Point(409, 39);
+            this.bto_pesquisaavance.Location = new System.Drawing.Point(286, 37);
             this.bto_pesquisaavance.Name = "bto_pesquisaavance";
-            this.bto_pesquisaavance.Size = new System.Drawing.Size(88, 23);
+            this.bto_pesquisaavance.Size = new System.Drawing.Size(117, 24);
             this.bto_pesquisaavance.TabIndex = 2;
             this.bto_pesquisaavance.Text = "Pesquisar Usuário";
             this.bto_pesquisaavance.UseVisualStyleBackColor = true;
@@ -103,6 +103,7 @@
             this.txt_codigo.Size = new System.Drawing.Size(211, 23);
             this.txt_codigo.TabIndex = 0;
             this.txt_codigo.TextChanged += new System.EventHandler(this.txt_codigo_TextChanged);
+            this.txt_codigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_codigo_KeyPress);
             // 
             // lbl_codigo
             // 

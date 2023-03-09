@@ -422,7 +422,58 @@ namespace N8_miniprojeto
 
         private void bto_pesquisaavancada_Click(object sender, EventArgs e)
         {
-            
+            if (txt_codigoproduto.Text.Trim() == "")
+            {
+                frmpesquisaproduto frm = new frmpesquisaproduto();
+                frm.ShowDialog();
+                txt_codigoproduto.Text = frm._codigo;
+                bto_codigoproduto.PerformClick();
+            }
+        }
+
+        private void txt_peso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_valorcusto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_valorvenda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_qtde_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_qtde_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_codigoproduto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
